@@ -2,23 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading;
+using System.Threading.Tasks;
 
-using NUnit.Framework;
+using Xunit;
 
 using PdfScribeCore;
 
-namespace PdfScribeUnitTests
+namespace PdfScribeTests
 {
-    [TestFixture]
-    public class UnitTests
+    public class Tests
     {
-        #region Ctor
-        public UnitTests()
-        { }
-        #endregion
-#if DEBUG
-
         #region PdfScribeCore Tests
         //[Test]
         public void Test_DeletePdfScribePort()
@@ -48,7 +41,7 @@ namespace PdfScribeUnitTests
             var scribeInstaller = new PdfScribeInstaller();
             scribeInstaller.IsPrinterDriverInstalled_Test("PDF Scribe Virtual Printer");
         }
-        
+
         //[Test]
         public void Test_InstallPdfScribePrinter()
         {
@@ -56,7 +49,7 @@ namespace PdfScribeUnitTests
             scribeInstaller.InstallPdfScribePrinter(@"C:\Code\PdfScribe\Lib\", String.Empty, String.Empty);
         }
 
-        [Test]
+        //[Test]
         public void Test_UninstallPdfScribePrinter()
         {
             var scribeInstaller = new PdfScribeInstaller();
@@ -72,13 +65,5 @@ namespace PdfScribeUnitTests
 
         #endregion
 
-        /*        
-        //[Test]
-        public void Test_ShowSimpleError()
-        {
-            var errorDialog = new PdfScribeCore.ErrorDialogPresenter("Error Caption", "Error Instructions", "Message text");
-        }
-        */
-#endif
     }
 }
